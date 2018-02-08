@@ -8,6 +8,11 @@ angular.module('ecommerce').service('cartSrvc', function(){
       }}
   ];
 
+  this.removeItem = function(product){
+    let index = cart.findIndex(line=>line.product === product);
+
+    cart.splice(index, 1);
+  }
   this.addItem = function(newItem){
     cart.push({
       amount:1,
